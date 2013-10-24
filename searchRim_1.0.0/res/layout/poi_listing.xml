@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="44dp"
+                  android:orientation="horizontal"
+                  android:background="@drawable/bg_title_bar">
+        <Button
+                android:id="@+id/returnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_nav_back"
+                android:layout_gravity="center"></Button>
+        <TextView
+                   android:id="@+id/poiListTitle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:textSize="20dp"
+                  android:layout_weight="1"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#ffffff"
+                  android:text="列表分类名称"></TextView>
+        <Button android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/u125_normal"
+                android:layout_gravity="center"></Button>
+        <Button android:id="@+id/mapOrListButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:focusable="false"
+                android:background="@drawable/u65_normal"
+                android:layout_gravity="center"
+                ></Button>
+    </LinearLayout>
+    <LinearLayout
+                  android:id="@+id/ScopeListKmM"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:background="@drawable/u39_normal"
+                  android:gravity="center"
+                  android:onClick="buttonOnClick">
+        <TextView android:id="@+id/textData"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#000000"
+                  android:text="范围:3000m内"
+                ></TextView>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_down"></ImageView>
+    </LinearLayout>
+    <!--Poi列表和地图两个布局 ，一个可见，一个不可见-->
+<FrameLayout
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+   <!-- list poi列表_files-->
+        <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/listFramelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            <!--地理信息列表-->
+            <ListView
+                    android:layout_weight="1"
+                    android:id="@+id/searchRimListView"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/linepic"
+                    android:dividerHeight="1dp"
+                    android:layout_width="fill_parent">
+
+            </ListView>
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:scaleType="center"
+                    android:src="@drawable/linepic" />
+            />
+            <!--加载更多-->
+            <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/moreLoad"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_marginTop="5dp"
+                        android:text="加载更多"
+                        android:textSize="16dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:scaleType="center"
+                        android:src="@drawable/linepic" />
+                />
+            </LinearLayout>
+
+        </LinearLayout>
+    <!--list poid地图-->
+      <LinearLayout
+              android:visibility="gone"
+              android:orientation="vertical"
+              android:id="@+id/listMapPoiLayout"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+          <FrameLayout
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent">
+            <com.baidu.mapapi.map.MapView android:id="@+id/bmapView"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                      />
+              <RelativeLayout
+                      android:layout_marginBottom="5dp"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="bottom"
+                      android:orientation="horizontal">
+
+                  <Button android:id="@+id/leftButton"
+                          android:layout_marginLeft="10dp"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:background="@drawable/u83_normal"
+                          ></Button>
+                  <Button android:id="@+id/rightButton"
+                          android:layout_marginLeft="10dp"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:background="@drawable/u81_normal"
+                          android:layout_toRightOf="@id/leftButton"></Button>
+                  <Button android:id="@+id/locButton"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:background="@drawable/u85_normal"
+                          android:layout_marginRight="5dp"
+                          android:layout_alignParentRight="true" ></Button>
+              </RelativeLayout>
+          </FrameLayout>
+      </LinearLayout>
+
+
+
+</FrameLayout>
+
+</LinearLayout>

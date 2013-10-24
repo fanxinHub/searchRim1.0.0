@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff">
+    <!--搜索工具Bar-->
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="44dp"
+                  android:orientation="horizontal"
+                  android:background="@drawable/bg_title_bar">
+        <Button
+                android:id="@+id/seekBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_nav_back"
+                android:layout_gravity="center"></Button>
+        <EditText
+                 android:id="@+id/editSearchText"
+                 android:layout_width="wrap_content"
+                  android:layout_height="fill_parent"
+                  android:layout_marginLeft="20dp"
+                  android:layout_weight="2"
+                  android:layout_marginTop="4dp"
+                  android:textColor="#90000000"
+                  android:textSize="16dp"
+                  android:hint="请输入要搜索的内容"></EditText>
+
+        <Button android:id="@+id/mapButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/abs__ic_search"
+                android:layout_gravity="center"></Button>
+    </LinearLayout>
+
+
+
+         <!--地理信息列表-->
+         <ListView
+                 android:layout_weight="1"
+                 android:id="@+id/searchRimListView"
+                 android:layout_height="wrap_content"
+                 android:divider="@drawable/linepic"
+                 android:dividerHeight="1dp"
+                 android:layout_width="fill_parent">
+
+         </ListView>
+         <ImageView
+                 android:layout_width="fill_parent"
+                 android:layout_height="1dp"
+                 android:scaleType="center"
+                 android:src="@drawable/linepic" />
+         />
+         <!--加载更多-->
+         <LinearLayout
+                 android:visibility="gone"
+                 android:id="@+id/moreLoad"
+                 android:clickable="true"
+                 android:orientation="vertical"
+                 android:gravity="center_horizontal"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+             <TextView
+                     android:layout_marginTop="5dp"
+                     android:text="加载更多"
+                     android:textSize="16dp"
+                     android:textColor="#000000"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     />
+             <ImageView
+                     android:layout_width="fill_parent"
+               android:layout_height="1dp"
+                     android:scaleType="center"
+                     android:src="@drawable/linepic" />
+             />
+         </LinearLayout>
+
+
+</LinearLayout>

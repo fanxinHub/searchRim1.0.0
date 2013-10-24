@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="44dp"
+                  android:orientation="horizontal"
+                  android:background="@drawable/bg_title_bar">
+        <Button
+                android:id="@+id/aboutBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_nav_back"
+                android:layout_gravity="center"></Button>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:textSize="20dp"
+                  android:layout_marginLeft="-25dp"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#ffffff"
+                  android:text="关于"></TextView>
+    </LinearLayout>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:textColor="#000000"
+              android:textSize="16dp"
+               android:layout_marginTop="5dp"
+              android:text="软件版本1.0.0"></TextView>
+
+</LinearLayout>
